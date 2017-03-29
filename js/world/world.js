@@ -2,6 +2,11 @@
 function World() {
   this.pressedKeys = [];
   
+  this.player = new Player();
+  
+  this.canvas = $("#game-canvas")[0];
+  this.ctx = this.canvas.getContext('2d');
+  
   // in milliseconds
   this.TIME_BETWEEN_LOOPINGS = 30;
 }
@@ -49,25 +54,19 @@ World.prototype.update = function() {
 
 World.prototype.updateEntities = function() {
   this.updateEnemies();
-  this.updatePlayer();
+  this.player.update(this.pressedKeys);
 }
 
 World.prototype.updateEnemies = function() {
   
 }
 
-World.prototype.updatePlayer = function() {
-  if (this.pressedKeys[KEY.UP]) {
-    console.log("Player is moving up");
-  }
-}
-
 World.prototype.eraseCanvas = function() {
-  
+  this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 }
 
 World.prototype.drawEntities = function() {
-  
+  this.player.draw(this.ctx);
 }
 
 World.prototype.draw = function() {
