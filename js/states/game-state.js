@@ -4,5 +4,5 @@ function GameState() {
 }
 
 GameState.prototype.start = function() {
-  this.world.startLooping();
+  this.world.start();
 }
