@@ -1,0 +1,16 @@
+div#game-wrapper {
+  /* NOTE: The canvas elements must match the width and height of
+  the canvas#game-canvas element (see index.html) */
+  height: 500px;
+  width: 1000px;
+  background-color: red; /* This background color is only seen if
+                         this div is bigger than the canvas element */
+  
+  /* Horizontally center the game */
+  margin: 0 auto;
+}
+
+canvas#game-canvas {
+  background-color: #e0ffe0;
+  border: solid black 5px;
+}
